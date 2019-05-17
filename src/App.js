@@ -10,40 +10,21 @@ export const submitCall = (callZome, { instanceId, zome, funcName, params }) => 
 
 function App() {
   const callZomeRef = useHolochainConnection()
-  const [instanceId, setInstanceId] = useState('')
-  const [values, setValues] = useState({})
-  const setValue = key => ({ target: { value }}) => setValues({...values, [key]: value})
+  const [instanceId, setInstanceId] = useState('hylo-chat')
 
   const callZome = (zome, funcName) => callZomeRef.current(instanceId, zome, funcName)
 
   return (
     <div className="App">
-      <div className='title'>{name}</div>
-      <div className='description'>{description}</div>      
+      <div className='dna-name'>{name}</div>
+      <div className='dna-description'>{description}</div>      
       <div>
-        <label>Instance Id</label>
-        <input onChange={({ target: { value }}) => setInstanceId(value)} />
+        <label className='instance-id-label'>Instance Id</label>
+        <input value={instanceId} onChange={({ target: { value }}) => setInstanceId(value)} />
       </div>
       <ZomeList callZome={callZome} zomes={zomes} />
-      <div>
-        <label>Instance Id</label>
-        <input onChange={setValue('instanceId')} />
-      </div>
-      <div>
-        <label>Zome</label>
-        <input onChange={setValue('zome')} />
-      </div>
-      <div>
-        <label>funcName</label>
-        <input onChange={setValue('funcName')} />
-      </div>            
-      <div>
-        <label>Params</label>
-        <textarea rows={10} cols={20} onChange={setValue('params')}/>
-      </div>
-      <button onClick={async () => console.log(await submitCall(callZomeRef.current, values))}>Call</button>
     </div>
-  );
+  )
 }
 
 export default App;

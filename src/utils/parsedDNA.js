@@ -1,8 +1,6 @@
 import rawDNA from '../dna.json'
 import { pick } from 'lodash/fp'
 
-console.log('rawDNA', rawDNA)
-
 const { name, description } = rawDNA
 
 const zomes = 

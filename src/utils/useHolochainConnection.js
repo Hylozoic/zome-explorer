@@ -12,12 +12,8 @@ export default function useHolochainConnection () {
     }
     connectToConductor()
     return () => {
-      console.log('cleaningup') 
       if (connection && connection.close) {
-        console.log('calling connection.close') 
         connection.close()
-      } else {
-        console.log('not closing connection', connection)
       }
     }
   })

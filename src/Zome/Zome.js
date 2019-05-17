@@ -1,15 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ZomeFunction from '../ZomeFunction'
+import ExpandButton from '../ExpandButton'
 
 export default function Zome ({ zome, callZome }) {
-  console.log('zome', zome)
   const { name, description, fn_declarations } = zome
-  console.log('fn_declarations', fn_declarations)  
   const callZomeFunc = funcName => callZome(zome.name, funcName)  
+
+  const [expanded, setExpanded] = useState(true)
+  const toggleExpanded = () => setExpanded(!expanded)  
+
   return <div className='zome'>
-    <div className='zome-name'>{name}</div>
-    <div className='zome-description'>{description}</div>
-    {fn_declarations.map(fnDeclaration => 
-      <ZomeFunction fnDeclaration={fnDeclaration} callZomeFunc={callZomeFunc} key={fnDeclaration.name} />)}
+    <div onClick={toggleExpanded} className='clickable-div'>
+      <div className='zome-name'>
+        {name}
+        <ExpandButton expanded={expanded} toggleExpanded={toggleExpanded} />
+      </div>
+      {expanded && <div className='zome-description'>{description}</div>}
+    </div>
+    {expanded && <div className='zome-functions'>
+      <div className='zome-functions-header'>Functions</div>
+      {fn_declarations.map(fnDeclaration => 
+      <ZomeFunction         
+        fnDeclaration={fnDeclaration} 
+        callZomeFunc={callZomeFunc} 
+        zomeName={name}
+        key={fnDeclaration.name} />)}
+    </div>}
   </div>
 }

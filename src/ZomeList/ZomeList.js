@@ -3,6 +3,11 @@ import Zome from '../Zome'
 
 export default function ZomeList ({ callZome, zomes }) {
   return <div className='zome-list'>
-    {zomes.map(zome => <Zome zome={zome} key={zome.name} callZome={callZome} />)}
+    <div className='zome-list-header'>Zomes</div>
+    {zomes.map(zome => 
+      <Zome 
+        zome={zome} 
+        callZome={callZome} 
+        key={zome.name} />)}
   </div>
 }

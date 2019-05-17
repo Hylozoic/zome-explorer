@@ -1,15 +1,88 @@
 .App {
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  padding: 50px;
+} 
 
+.dna-name {
+  font-size: 20px;
+  font-variant: small-caps;
+  margin-bottom: 5px;
 }
 
-.zome {
-  border: 1px solid lightgray;
+.dna-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.instance-id-label {
+  font-size: 12px;
+  margin-right: 5px;
 }
 
 .zome-list {
   border: 1px solid lightgray;
+  margin: 25px 0px;
+}
+
+.zome-list-header {
+  padding: 10px;
+}
+
+.zome {
+  border-top: 1px solid lightgray;
+  padding: 10px;
+}
+
+.zome-name {
+  display: flex;
+  flex-direction: row;  
+}
+
+.zome-description {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.zome-functions {
+  border-bottom: 1px solid lightgray;
+  padding-left: 5px;
+}
+
+.zome-functions-header {
+  margin-bottom: 5px;
 }
 
 .zome-function {
-  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid lightgray;
+  border-left: 1px solid lightgray;  
+  border-right: 1px solid lightgray;    
+  padding: 10px 10px 10px 10px;
+}
+
+.function-name {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.call-button {
+  font-size: 20px;
+  padding: 3px 0px;
+}
+
+.expand-button-icon {
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
+/* utils */
+
+.clickable-div {
+  cursor: pointer;
+  user-select: none;
 }
