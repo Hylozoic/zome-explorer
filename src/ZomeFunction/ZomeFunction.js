@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
 import ExpandButton from '../ExpandButton'
+import CallRecord from '../CallRecord'
 
 export default function ZomeFunction ({ fnDeclaration, callZomeFunc, zomeName }) {
   const defaultParams = 
     `{\n${fnDeclaration.inputs.reduce((acc, { name }) => acc + `  "${name}": "",\n`, '')}}`
   const [params, setParams] = useState(defaultParams)
-  const { name } = fnDeclaration
-  const call = () => callZomeFunc(name)(JSON.parse(params))
+  const { name } = fnDeclaration  
+
+  const [callRecord, setCallRecord] = useState()
+  const call = async () => setCallRecord(await callZomeFunc(name)(JSON.parse(params)))
 
   const [expanded, setExpanded] = useState(false)
   const toggleExpanded = () => setExpanded(!expanded)
+
 
   return <div className='zome-function'>
     <div className='zome-function-header clickable-div' onClick={toggleExpanded}>
@@ -30,6 +34,7 @@ export default function ZomeFunction ({ fnDeclaration, callZomeFunc, zomeName })
     </div>
     {expanded && <TabableEditor id={`editor-${zomeName}-${name}`} value={params} onChange={({ target: { value } }) => setParams(value)} />}
     {expanded && <button className='call-button' onClick={call}>Call</button>}
+    {callRecord && <CallRecord callRecord={callRecord} />}
   </div>
 }
 

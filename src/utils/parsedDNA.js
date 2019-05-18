@@ -1,4 +1,4 @@
-import rawDNA from '../dna.json'
+import rawDNA from '../dna/dna-metadata.json'
 import { pick } from 'lodash/fp'
 
 const { name, description } = rawDNA

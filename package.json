@@ -5,6 +5,7 @@
   "dependencies": {
     "@holochain/hc-web-client": "^0.4.1",
     "bootstrap": "^4.3.1",
+    "dotenv": "^8.0.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",

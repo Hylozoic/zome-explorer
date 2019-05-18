@@ -4,9 +4,10 @@ import useHolochainConnection from './utils/useHolochainConnection'
 import { name, description, zomes } from './utils/parsedDNA'
 import ZomeList from './ZomeList'
 import Results from './Results'
+require('dotenv').config()
 
 export default function App() {
-  const callZomeRef = useHolochainConnection()
+  const callZomeRef = useHolochainConnection(process.env.ZOME_WEBSOCKET_URL)
   const [instanceId, setInstanceId] = useState('hylo-chat')
   const [history, setHistory] = useState([])
 
@@ -18,6 +19,7 @@ export default function App() {
       result
     }
     setHistory([callRecord].concat(history))
+    return callRecord
   }
 
   const leftColumn = <div>
