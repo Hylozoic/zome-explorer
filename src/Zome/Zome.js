@@ -4,9 +4,9 @@ import ExpandButton from '../ExpandButton'
 
 export default function Zome ({ zome, callZome }) {
   const { name, description, fn_declarations } = zome
-  const callZomeFunc = funcName => callZome(zome.name, funcName)  
+  const callZomeFunc = callZome(zome.name)  
 
-  const [expanded, setExpanded] = useState(true)
+  const [expanded, setExpanded] = useState(false)
   const toggleExpanded = () => setExpanded(!expanded)  
 
   return <div className='zome'>

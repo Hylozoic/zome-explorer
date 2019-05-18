@@ -1,25 +1,34 @@
 import React, { useState } from 'react'
 import ExpandButton from '../ExpandButton'
-import JSONInput from 'react-json-editor-ajrm';
-import { JsonEditor as Editor } from 'jsoneditor-react';
-import 'jsoneditor-react/es/editor.min.css';
 
 export default function ZomeFunction ({ fnDeclaration, callZomeFunc, zomeName }) {
-  const [params, setParams] = useState('')
+  const defaultParams = 
+    `{\n${fnDeclaration.inputs.reduce((acc, { name }) => acc + `  "${name}": "",\n`, '')}}`
+  const [params, setParams] = useState(defaultParams)
   const { name } = fnDeclaration
-  const call = () => callZomeFunc(name)(params)
+  const call = () => callZomeFunc(name)(JSON.parse(params))
 
-  const [expanded, setExpanded] = useState(true)
-  const toggleExpanded = () => setExpanded(!expanded)  
-
-  console.log('params', params)
+  const [expanded, setExpanded] = useState(false)
+  const toggleExpanded = () => setExpanded(!expanded)
 
   return <div className='zome-function'>
-    <div className='function-name clickable-div' onClick={toggleExpanded}>
-      {name}
-      <ExpandButton expanded={expanded} toggleExpanded={toggleExpanded} />
+    <div className='zome-function-header clickable-div' onClick={toggleExpanded}>
+      <div className='function-name'>
+        {name}
+        <ExpandButton expanded={expanded} toggleExpanded={toggleExpanded} />
+      </div>
+      {expanded && <div className='zome-function-signature'>
+        <div className='zome-function-signature-label'>Inputs</div>
+        {fnDeclaration.inputs.map(({ name, type }) => <div className='zome-function-signature-row' key={name}>
+          {name}: {type}
+        </div>)}
+        <div className='zome-function-signature-label'>Outputs</div>
+        {fnDeclaration.outputs.map(({ name, type }) => <div className='zome-function-signature-row' key={name}>
+          {name}: {type}
+        </div>)}
+      </div>}
     </div>
-    {expanded && <TabableEditor id={`editor-${zomeName}-${name}`}value={params} onChange={({ target: { value } }) => setParams(value)} />}
+    {expanded && <TabableEditor id={`editor-${zomeName}-${name}`} value={params} onChange={({ target: { value } }) => setParams(value)} />}
     {expanded && <button className='call-button' onClick={call}>Call</button>}
   </div>
 }
