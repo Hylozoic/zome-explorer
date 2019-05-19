@@ -2,10 +2,10 @@ import React from 'react'
 import JSONPretty from 'react-json-pretty';
 
 const jsonTheme = {
-  key: 'color:#42914a;',
-  string: 'color:#cc4e00;',
-  value: 'color:#aa6825;',
-  boolean: 'color:#3d971f;'
+  key: 'color:#80B21C;',
+  string: 'color:#C455A6;',
+  value: 'color:#C455A6;',
+  boolean: 'color:#C455A6;'
 }
 export default function CallRecord ({ callRecord }) {
   const { path, params, result } = callRecord

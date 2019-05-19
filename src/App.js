@@ -4,12 +4,12 @@ import useHolochainConnection from './utils/useHolochainConnection'
 import { name, description, zomes } from './utils/parsedDNA'
 import ZomeList from './ZomeList'
 import Results from './Results'
-require('dotenv').config()
 
 export default function App() {
-  const callZomeRef = useHolochainConnection(process.env.ZOME_WEBSOCKET_URL)
-  const [instanceId, setInstanceId] = useState('hylo-chat')
-  const [history, setHistory] = useState([])
+  const callZomeRef = useHolochainConnection(process.env.REACT_APP_ZOME_WEBSOCKET_URL)
+  const [instanceId, setInstanceId] = useState('')
+  const storedHistory = sessionStorage.getItem('history')    
+  const [history, setHistory] = useState((storedHistory && JSON.parse(storedHistory)) || [])  
 
   const callZome = zomeName => funcName => async params => {
     const result = await callZomeRef.current(instanceId, zomeName, funcName)(params)
@@ -18,7 +18,9 @@ export default function App() {
       params,
       result
     }
-    setHistory([callRecord].concat(history))
+    const newHistory = [callRecord].concat(history)
+    setHistory(newHistory)
+    sessionStorage.setItem('history', JSON.stringify(newHistory))
     return callRecord
   }
 

@@ -55,16 +55,17 @@
 }
 
 .zome-list {
-  border: 1px solid lightgray;
+  border: 1px solid #C455A6;
   margin: 25px 0px;
 }
 
 .zome-list-header {
   padding: 10px;
+  color: #65A9CE;
 }
 
 .zome {
-  border-top: 1px solid lightgray;
+  border-top: 1px solid #C455A6;
   padding: 10px;
 }
 
@@ -81,20 +82,21 @@
 }
 
 .zome-functions {
-  border-bottom: 1px solid lightgray;
-  padding-left: 5px;
+  border-bottom: 1px solid #C2F45D;
+  margin-left: 5px;
 }
 
 .zome-functions-header {
   margin-bottom: 5px;
+  color: #65A9CE;
 }
 
 .zome-function {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid lightgray;
-  border-left: 1px solid lightgray;  
-  border-right: 1px solid lightgray;    
+  border-top: 1px solid #C2F45D;
+  border-left: 1px solid #C2F45D;  
+  border-right: 1px solid #C2F45D;    
   padding: 10px 10px 10px 10px;
 }
 
@@ -103,9 +105,14 @@
   flex-direction: column;
 }
 
+.function-name {
+  display: flex;
+  flex-direction: row;
+}
+
 .zome-function-signature {
   font-size: 12px;  
-  margin-bottom: 10px;
+  margin: 10px 0px;
 }
 
 .zome-function-signature-label {
@@ -117,20 +124,26 @@
 
 }
 
-.function-name {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 10px;
-}
-
 .call-button {
   font-size: 20px;
   padding: 3px 0px;
 }
 
+.call-error {
+  margin: 15px 0px;
+  padding: 15px 20px;
+  font-size: 14px; 
+  border: 2px solid red;
+}
+
 .expand-button-icon {
   margin-left: 10px;
   margin-top: 3px;
+}
+
+.filter-row {
+  margin-bottom: 25px;
+  margin-top: 61px;
 }
 
 .call-record {

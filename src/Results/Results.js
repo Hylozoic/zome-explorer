@@ -6,7 +6,7 @@ export default function Results ({ history }) {
   const filteredRecords = history.filter(callRecord => JSON.stringify(callRecord).indexOf(filter) >= 0)
 
 return <div className='results'>
-    <div>
+    <div className='filter-row'>
       <label className='input-label'>Filter</label>
       <input value={filter} onChange={({ target: { value }}) => setFilter(value)} />
     </div>

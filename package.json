@@ -6,6 +6,7 @@
     "@holochain/hc-web-client": "^0.4.1",
     "bootstrap": "^4.3.1",
     "dotenv": "^8.0.0",
+    "nodemon": "^1.19.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
@@ -17,7 +18,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "load-dna": "node scripts/copyDnaMetadata.js",
+    "autoload-dna": "node scripts/autoCopyDna.js"
   },
   "eslintConfig": {
     "extends": "react-app"

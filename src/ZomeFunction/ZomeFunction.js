@@ -9,11 +9,19 @@ export default function ZomeFunction ({ fnDeclaration, callZomeFunc, zomeName })
   const { name } = fnDeclaration  
 
   const [callRecord, setCallRecord] = useState()
-  const call = async () => setCallRecord(await callZomeFunc(name)(JSON.parse(params)))
+  const [error, setError] = useState()
+  const call = async () => {
+    try {
+      setError(null)
+      setCallRecord(await callZomeFunc(name)(JSON.parse(params)))
+    } catch (err) {
+      setCallRecord(null)
+      setError(err.message)
+    }
+  }
 
   const [expanded, setExpanded] = useState(false)
   const toggleExpanded = () => setExpanded(!expanded)
-
 
   return <div className='zome-function'>
     <div className='zome-function-header clickable-div' onClick={toggleExpanded}>
@@ -35,6 +43,7 @@ export default function ZomeFunction ({ fnDeclaration, callZomeFunc, zomeName })
     {expanded && <TabableEditor id={`editor-${zomeName}-${name}`} value={params} onChange={({ target: { value } }) => setParams(value)} />}
     {expanded && <button className='call-button' onClick={call}>Call</button>}
     {callRecord && <CallRecord callRecord={callRecord} />}
+    {error && <div className='call-error'>Error: {error}</div>}
   </div>
 }
 
