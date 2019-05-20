@@ -8,6 +8,8 @@ if (!dnaPath) {
   console.error('please provide path to dna.json as first command line arg or as DNA_FILE_PATH in .env')
 }
 
+console.log(`copying metadata from ${dnaPath}`)
+
 const dnaFile = fs.readFileSync(dnaPath, "utf8");
 
 const dnaJson = JSON.parse(dnaFile)

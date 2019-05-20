@@ -27,14 +27,14 @@ REACT_APP_ZOME_WEBSOCKET_URL=ws://localhost:[yourport]
 ```
 
 Find the dna.json in the dna folder of your holochain project, once you've built it.
-To get the websocket url, add the following to your conductor config, replacing \[yourport\] with a port number
+To get the websocket url, add the following to your conductor config, replacing \[yourport\] with a port number and \[yourinstanceid\] with the instance id specified elsewhere in the conductor config
 
 ```
 [[interfaces]]
 id = "websocket_interface"
 
     [[interfaces.instances]]
-    id = "hylo-chat"
+    id = [yourinstanceid]
 
     [interfaces.driver]
     type = "websocket"
