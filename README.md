@@ -2,6 +2,8 @@
 
 Zome explorer is a gui tool for examining and calling running zomes in a [Holochain](https://github.com/holochain/holochain-rust) conductor.
 
+![example of running gui](https://user-images.githubusercontent.com/891124/57994798-1ba76780-7a7c-11e9-8d0d-2fbec039b923.png)
+
 ## Installation
 
 clone the repo with
@@ -61,6 +63,3 @@ Now you can look at the zomes listed on the left. click on a zome to see all pub
 A history of all function calls in this session is maintained in the right column, so you can easily use results of one call in the next.
 
 Enjoy!
-
-![example of running gui](https://user-images.githubusercontent.com/891124/57994798-1ba76780-7a7c-11e9-8d0d-2fbec039b923.png)
-
