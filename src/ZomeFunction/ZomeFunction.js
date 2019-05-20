@@ -2,10 +2,15 @@ import React, { useState } from 'react'
 import ExpandButton from '../ExpandButton'
 import CallRecord from '../CallRecord'
 
+export function getDefaultParams (fnDeclaration) { 
+    return `{\n${
+      fnDeclaration.inputs.reduce((acc, { name }) => acc + `  "${name}": "",\n`, '')
+      .replace(/,\n$/, '\n')
+    }}`
+}
+
 export default function ZomeFunction ({ fnDeclaration, callZomeFunc, zomeName }) {
-  const defaultParams = 
-    `{\n${fnDeclaration.inputs.reduce((acc, { name }) => acc + `  "${name}": "",\n`, '')}}`
-  const [params, setParams] = useState(defaultParams)
+  const [params, setParams] = useState(getDefaultParams(fnDeclaration))
   const { name } = fnDeclaration  
 
   const [callRecord, setCallRecord] = useState()
