@@ -10,6 +10,13 @@ clone the repo with
 
 `git clone https://github.com/robbiecarlton/zome-explorer.git`
 
+then
+
+```
+cd zome-explorer
+yarn install
+```
+
 ## Configuration
 
 create a .env file in the project root with the following values
