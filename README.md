@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Zome Explorer
 
-## Available Scripts
+Zome explorer is a gui tool for examining and calling running zomes in a [Holochain](https://github.com/holochain/holochain-rust) conductor.
 
-In the project directory, you can run:
+![example of running gui](https://user-images.githubusercontent.com/891124/57994798-1ba76780-7a7c-11e9-8d0d-2fbec039b923.png)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+clone the repo with
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+`git clone https://github.com/robbiecarlton/zome-explorer.git`
 
-### `npm test`
+## Configuration
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+create a .env file in the project root with the following values
 
-### `npm run build`
+```
+DNA_FILE_PATH=/path/to/dna.json
+REACT_APP_ZOME_WEBSOCKET_URL=ws://localhost:[yourport]
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+the dna.json should be in the dna folder of your holochain project, once you've built it
+to get the websocket url, add the following to your conductor config, replacing \[yourport\] with a port number
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+[[interfaces]]
+id = "websocket_interface"
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    [[interfaces.instances]]
+    id = "hylo-chat"
 
-### `npm run eject`
+    [interfaces.driver]
+    type = "websocket"
+    port = [yourport]
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### load the dna
+next run
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm run load-dna`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+to copy the dna of your project into zome-explorer. (it removes the code from the copies, because we don't need the code, making everything run faster).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+running
 
-## Learn More
+`npm run autoload-dna`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+instead will watch for changes to the dna in the Holochain project and is better if you're making changes to the Holochain project.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Start the gui
 
-### Code Splitting
+finally
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+`npm start`
 
-### Analyzing the Bundle Size
+will start the app, and serve it on localhost:3000, or the nearest available port. 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Usage
 
-### Making a Progressive Web App
+You have to provide it the instance id of your running dna instance, which you can find in your conductor config.
+Now you can look at the zomes listed on the left. click on a zome to see all public functions of that zome, together with function signature. Enter JSON in the textarea and hit call to call a given function. The JSON should match the structure of the expected inputs.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+A history of all function calls in this session is maintained in the right column, so you can easily use results of one call in the next.
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Enjoy!
