@@ -71,4 +71,7 @@ Now you can look at the zomes listed on the left. Click on a zome to see all pub
 
 A history of all function calls in this session is maintained in the right column, so you can easily use results of one call in the next.
 
+See this [Video demo](https://youtu.be/77GmLoGO0WQ) for examples of usage.
+
+
 Enjoy!
