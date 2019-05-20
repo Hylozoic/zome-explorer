@@ -17,6 +17,14 @@ const fnDeclaration = {
       name: 'input-three',
       type: 'Vec<String>'
     },
+    {
+      name: 'input-four',
+      type: 'CommentData'
+    },
+    {
+      name: 'input-five',
+      type: 'HashString'
+    }    
   ]
 }
 

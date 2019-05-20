@@ -4,7 +4,9 @@ exports[` 1`] = `
 "{
   \\"input-one\\": \\"\\",
   \\"input-two\\": false,
-  \\"input-three\\": []
+  \\"input-three\\": [],
+  \\"input-four\\": { },
+  \\"input-five\\": \\"\\"
 }"
 `;
 

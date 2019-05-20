@@ -7,9 +7,11 @@ function defaultForType (type) {
     return 'false'
   } else if (type.indexOf('Vec<') === 0) {
     return '[]'
+  } else if (type === 'String' || type === 'HashString') {
+    return '""'
+  } else {
+    return '{ }'
   }
-
-  return '""'
 }
 
 export function getDefaultParams (fnDeclaration) { 
