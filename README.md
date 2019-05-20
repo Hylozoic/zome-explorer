@@ -6,7 +6,7 @@ Zome explorer is a gui tool for examining and calling running zomes in a [Holoch
 
 ## Installation
 
-clone the repo with
+Clone the repo with
 
 `git clone https://github.com/robbiecarlton/zome-explorer.git`
 
@@ -19,15 +19,15 @@ yarn install
 
 ## Configuration
 
-create a .env file in the project root with the following values
+Create a .env file in the project root with the following values
 
 ```
 DNA_FILE_PATH=/path/to/dna.json
 REACT_APP_ZOME_WEBSOCKET_URL=ws://localhost:[yourport]
 ```
 
-the dna.json should be in the dna folder of your holochain project, once you've built it
-to get the websocket url, add the following to your conductor config, replacing \[yourport\] with a port number
+Find the dna.json in the dna folder of your holochain project, once you've built it.
+To get the websocket url, add the following to your conductor config, replacing \[yourport\] with a port number
 
 ```
 [[interfaces]]
@@ -42,13 +42,13 @@ id = "websocket_interface"
 ```
 
 ### load the dna
-next run
+Run
 
 `npm run load-dna`
 
 to copy the dna of your project into zome-explorer. (it removes the code from the copies, because we don't need the code, making everything run faster).
 
-running
+Running
 
 `npm run autoload-dna`
 
@@ -56,7 +56,7 @@ instead will watch for changes to the dna in the Holochain project and is better
 
 ### Start the gui
 
-finally
+Finally
 
 `npm start`
 
@@ -64,8 +64,8 @@ will start the app, and serve it on localhost:3000, or the nearest available por
 
 ## Usage
 
-You have to provide it the instance id of your running dna instance, which you can find in your conductor config.
-Now you can look at the zomes listed on the left. click on a zome to see all public functions of that zome, together with function signature. Enter JSON in the textarea and hit call to call a given function. The JSON should match the structure of the expected inputs.
+In the GUI, you provide the instance id of your running dna instance, which you can find in your conductor config.
+Now you can look at the zomes listed on the left. Click on a zome to see all public functions of that zome, together with function signature. Enter JSON in the textarea and hit call to call a given function. The JSON should match the structure of the expected inputs.
 
 A history of all function calls in this session is maintained in the right column, so you can easily use results of one call in the next.
 
