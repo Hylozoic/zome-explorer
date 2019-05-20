@@ -8,7 +8,7 @@ Zome explorer is a gui tool for examining and calling running zomes in a [Holoch
 
 Clone the repo with
 
-`git clone https://github.com/robbiecarlton/zome-explorer.git`
+`git clone https://github.com/Hylozoic/zome-explorer.git`
 
 then
 
