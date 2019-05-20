@@ -4,6 +4,8 @@ Zome explorer is a gui tool for examining and calling running zomes in a [Holoch
 
 ![example of running gui](https://user-images.githubusercontent.com/891124/57994798-1ba76780-7a7c-11e9-8d0d-2fbec039b923.png)
 
+[Video demo and setup instructions](https://youtu.be/77GmLoGO0WQ)
+
 ## Installation
 
 Clone the repo with
