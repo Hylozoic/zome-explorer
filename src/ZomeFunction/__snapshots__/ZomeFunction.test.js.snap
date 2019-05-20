@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+"{
+  \\"input-one\\": \\"\\",
+  \\"input-two\\": false,
+  \\"input-three\\": []
+}"
+`;
+
+exports[`TabableEditor matches the last snapshot 1`] = `
+<textarea
+  cols={50}
+  id="id"
+  onChange={[Function]}
+  onKeyDown={[Function]}
+  rows={15}
+  value="text"
+/>
+`;
+
+exports[`ZomeFunction matches the last snapshot 1`] = `
+<div
+  className="zome-function"
+>
+  <div
+    className="zome-function-header clickable-div"
+    onClick={[Function]}
+  >
+    <div
+      className="function-name"
+    >
+      the function
+      <ExpandButton
+        expanded={false}
+        toggleExpanded={[Function]}
+      />
+    </div>
+  </div>
+</div>
+`;

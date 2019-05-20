@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the last snapshot 1`] = `
+<div
+  className="expand-button"
+  onClick={[Function]}
+>
+  <FiChevronRight
+    className="expand-button-icon"
+  />
+</div>
+`;
+
+exports[`matches the last snapshot when expanded 1`] = `
+<div
+  className="expand-button"
+  onClick={[Function]}
+>
+  <FiChevronDown
+    className="expand-button-icon"
+  />
+</div>
+`;

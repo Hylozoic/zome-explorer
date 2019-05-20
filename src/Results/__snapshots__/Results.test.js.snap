@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the last snapshot 1`] = `
+<div
+  className="results"
+>
+  <div
+    className="filter-row"
+  >
+    <label
+      className="input-label"
+    >
+      Filter
+    </label>
+    <input
+      onChange={[Function]}
+      value=""
+    />
+  </div>
+  <CallRecord
+    callRecord={
+      Object {
+        "name": "one call record",
+      }
+    }
+    key="0"
+  />
+  <CallRecord
+    callRecord={
+      Object {
+        "name": "another call record",
+      }
+    }
+    key="1"
+  />
+</div>
+`;

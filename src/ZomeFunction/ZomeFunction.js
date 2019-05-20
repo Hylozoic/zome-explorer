@@ -2,9 +2,19 @@ import React, { useState } from 'react'
 import ExpandButton from '../ExpandButton'
 import CallRecord from '../CallRecord'
 
+function defaultForType (type) {
+  if (type === 'bool') {
+    return 'false'
+  } else if (type.indexOf('Vec<') === 0) {
+    return '[]'
+  }
+
+  return '""'
+}
+
 export function getDefaultParams (fnDeclaration) { 
     return `{\n${
-      fnDeclaration.inputs.reduce((acc, { name }) => acc + `  "${name}": "",\n`, '')
+      fnDeclaration.inputs.reduce((acc, { name, type }) => acc + `  "${name}": ${defaultForType(type)},\n`, '')
       .replace(/,\n$/, '\n')
     }}`
 }

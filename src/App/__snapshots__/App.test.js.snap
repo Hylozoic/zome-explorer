@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the last snapshot 1`] = `
+<div
+  className="app"
+>
+  <div
+    className="column-wrapper"
+  >
+    <div
+      className="column"
+    >
+      <div>
+        <div
+          className="dna-name"
+        >
+          the dna name
+        </div>
+        <div
+          className="dna-description"
+        >
+          any old dna
+        </div>
+        <div>
+          <label
+            className="input-label"
+          >
+            Instance Id
+          </label>
+          <input
+            onChange={[Function]}
+            value=""
+          />
+        </div>
+        <ZomeList
+          callZome={[Function]}
+          zomes={
+            Array [
+              Object {
+                "name": "Zome One",
+              },
+              Object {
+                "name": "Zome Two",
+              },
+            ]
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="separator"
+    />
+    <div
+      className="column"
+    >
+      <Results
+        history={Array []}
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the last snapshot 1`] = `
+<div
+  className="zome-list"
+>
+  <div
+    className="zome-list-header"
+  >
+    Zomes
+  </div>
+  <Zome
+    callZome={[Function]}
+    key="zome one"
+    zome={
+      Object {
+        "name": "zome one",
+      }
+    }
+  />
+  <Zome
+    callZome={[Function]}
+    key="zome two"
+    zome={
+      Object {
+        "name": "zome two",
+      }
+    }
+  />
+</div>
+`;

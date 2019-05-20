@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the last snapshot 1`] = `
+<div
+  className="call-record"
+>
+  <div
+    className="call-record-path"
+  >
+    /instance/zome/function
+  </div>
+  <div
+    className="call-record-title"
+  >
+    Inputs
+  </div>
+  <JSONPretty
+    data={
+      Object {
+        "a": "value",
+        "b": "different value",
+      }
+    }
+    json=""
+    silent={true}
+    space={2}
+    theme={
+      Object {
+        "boolean": "color:#C455A6;",
+        "key": "color:#80B21C;",
+        "string": "color:#C455A6;",
+        "value": "color:#C455A6;",
+      }
+    }
+    themeClassName="__json-pretty__"
+  />
+  <div
+    className="call-record-title"
+  >
+    Outputs
+  </div>
+  <JSONPretty
+    data={
+      Object {
+        "ok": "yup",
+      }
+    }
+    json=""
+    silent={true}
+    space={2}
+    theme={
+      Object {
+        "boolean": "color:#C455A6;",
+        "key": "color:#80B21C;",
+        "string": "color:#C455A6;",
+        "value": "color:#C455A6;",
+      }
+    }
+    themeClassName="__json-pretty__"
+  />
+</div>
+`;

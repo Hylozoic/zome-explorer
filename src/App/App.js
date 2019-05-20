@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import './App.css'
-import useHolochainConnection from './utils/useHolochainConnection'
-import { name, description, zomes } from './utils/parsedDNA'
-import ZomeList from './ZomeList'
-import Results from './Results'
+import useHolochainConnection from '../utils/useHolochainConnection'
+import { name, description, zomes } from '../utils/parsedDNA'
+import ZomeList from '../ZomeList'
+import Results from '../Results'
 
 export default function App() {
   const callZomeRef = useHolochainConnection(process.env.REACT_APP_ZOME_WEBSOCKET_URL)
