@@ -23,7 +23,6 @@
 .separator {
   width: 32px;
   padding: 0;
-  cursor: ew-resize;
   flex: 0 0 auto;
 }
 
