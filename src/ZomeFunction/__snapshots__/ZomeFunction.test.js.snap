@@ -6,7 +6,8 @@ exports[` 1`] = `
   \\"input-two\\": false,
   \\"input-three\\": [],
   \\"input-four\\": { },
-  \\"input-five\\": \\"\\"
+  \\"input-five\\": \\"\\",
+  \\"input-six\\": \\"\\"
 }"
 `;
 

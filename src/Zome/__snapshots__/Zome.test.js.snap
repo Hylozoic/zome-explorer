@@ -13,9 +13,83 @@ exports[`matches the last snapshot 1`] = `
     >
       some zome
       <ExpandButton
-        expanded={false}
+        expanded={true}
         toggleExpanded={[Function]}
       />
+    </div>
+    <div
+      className="zome-description"
+    >
+      a really great one
+    </div>
+  </div>
+  <div
+    className="zome-functions"
+  >
+    <div
+      className="zome-functions-header"
+    >
+      Functions
+    </div>
+    <ZomeFunction
+      callZomeFunc={[Function]}
+      fnDeclaration={
+        Object {
+          "name": "a function declaration",
+        }
+      }
+      key="a function declaration"
+      zomeName="some zome"
+    />
+    <ZomeFunction
+      callZomeFunc={[Function]}
+      fnDeclaration={
+        Object {
+          "name": "a different function declaration",
+        }
+      }
+      key="a different function declaration"
+      zomeName="some zome"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders empty function state 1`] = `
+<div
+  className="zome"
+>
+  <div
+    className="clickable-div"
+    onClick={[Function]}
+  >
+    <div
+      className="zome-name"
+    >
+      some zome
+      <ExpandButton
+        expanded={true}
+        toggleExpanded={[Function]}
+      />
+    </div>
+    <div
+      className="zome-description"
+    >
+      a really great one
+    </div>
+  </div>
+  <div
+    className="zome-functions"
+  >
+    <div
+      className="zome-functions-header"
+    >
+      Functions
+    </div>
+    <div
+      className="zome-functions-empty-state"
+    >
+      No public functions exposed in zome.
     </div>
   </div>
 </div>

@@ -90,6 +90,12 @@
   color: #65A9CE;
 }
 
+.zome-functions-empty-state {
+  font-size: 12px;  
+  margin: 15px 0px;
+  color: #555;
+}
+
 .zome-function {
   display: flex;
   flex-direction: column;

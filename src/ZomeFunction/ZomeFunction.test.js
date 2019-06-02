@@ -24,6 +24,10 @@ const fnDeclaration = {
     {
       name: 'input-five',
       type: 'HashString'
+    },
+    {
+      name: 'input-six',
+      type: 'Address'
     }    
   ]
 }
@@ -42,7 +46,7 @@ describe('ZomeFunction', () => {
     }  
     const wrapper = shallow(<ZomeFunction {...props} />)
     expect(wrapper).toMatchSnapshot()
-  })  
+  })
 })
 
 describe('TabableEditor', () => {
