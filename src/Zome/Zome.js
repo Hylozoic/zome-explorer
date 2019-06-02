@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import ZomeFunction from '../ZomeFunction'
 import ExpandButton from '../ExpandButton'
+import { isEmpty } from 'lodash/fp'
 
-export default function Zome ({ zome, callZome }) {
+export default function Zome ({ zome, callZome, expanded: expandedProp }) {
   const { name, description, fn_declarations } = zome
   const callZomeFunc = callZome(zome.name)  
 
-  const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(expandedProp)
   const toggleExpanded = () => setExpanded(!expanded)  
 
   return <div className='zome'>
@@ -19,6 +20,9 @@ export default function Zome ({ zome, callZome }) {
     </div>
     {expanded && <div className='zome-functions'>
       <div className='zome-functions-header'>Functions</div>
+      {isEmpty(fn_declarations) && <div className='zome-functions-empty-state'>
+        No public functions exposed in zome.
+      </div>}
       {fn_declarations.map(fnDeclaration => 
       <ZomeFunction         
         fnDeclaration={fnDeclaration} 
