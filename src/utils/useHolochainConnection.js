@@ -7,7 +7,7 @@ export default function useHolochainConnection (url) {
   useEffect(() => {
     var connection
     async function connectToConductor () {
-      connection = await connect(url)
+      connection = await connect({url})
       callZomeRef.current = connection.callZome  
     }
     connectToConductor()
