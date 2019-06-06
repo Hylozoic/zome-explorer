@@ -29,7 +29,7 @@ exports[`matches the last snapshot 1`] = `
           </label>
           <input
             onChange={[Function]}
-            value=""
+            value={null}
           />
         </div>
         <ZomeList
