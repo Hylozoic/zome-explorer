@@ -35,7 +35,7 @@ exports[`ZomeFunction matches the last snapshot 1`] = `
     >
       the function
       <ExpandButton
-        expanded={false}
+        expanded={null}
         toggleExpanded={[Function]}
       />
     </div>

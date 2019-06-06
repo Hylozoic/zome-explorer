@@ -37,8 +37,12 @@ export default function ZomeFunction ({ fnDeclaration, callZomeFunc, zomeName })
     }
   }
 
-  const [expanded, setExpanded] = useState(false)
-  const toggleExpanded = () => setExpanded(!expanded)
+  const [expanded, setExpanded] = useState(sessionStorage.getItem(`zome:${zomeName}/${name}`))
+  const setExpandedSession = value => {
+    setExpanded(value)
+    sessionStorage.setItem(`zome:${zomeName}/${name}`, value)
+  }
+  const toggleExpanded = () => setExpandedSession(!expanded)
 
   return <div className='zome-function'>
     <div className='zome-function-header clickable-div' onClick={toggleExpanded}>
