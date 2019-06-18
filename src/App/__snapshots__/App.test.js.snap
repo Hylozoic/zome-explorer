@@ -21,7 +21,9 @@ exports[`matches the last snapshot 1`] = `
         >
           any old dna
         </div>
-        <div>
+        <div
+          className="instance-input"
+        >
           <label
             className="input-label"
           >
@@ -31,6 +33,16 @@ exports[`matches the last snapshot 1`] = `
             onChange={[Function]}
             value=""
           />
+        </div>
+        <div
+          className="status"
+        >
+          Status: 
+          <span
+            className="disconnected"
+          >
+            Disconnected
+          </span>
         </div>
         <ZomeList
           callZome={[Function]}
