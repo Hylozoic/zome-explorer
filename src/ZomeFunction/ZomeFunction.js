@@ -3,11 +3,14 @@ import ExpandButton from '../ExpandButton'
 import CallRecord from '../CallRecord'
 
 function defaultForType (type) {
+
+  const stringTypes = ['String', 'HashString', 'Address', 'Iso8601']
+
   if (type === 'bool') {
     return 'false'
   } else if (type.indexOf('Vec<') === 0) {
     return '[]'
-  } else if (type === 'String' || type === 'HashString' || type === 'Address') {
+  } else if (stringTypes.includes(type)) {
     return '""'
   } else {
     return '{ }'

@@ -28,7 +28,11 @@ const fnDeclaration = {
     {
       name: 'input-six',
       type: 'Address'
-    }    
+    },
+    {
+      name: 'input-six',
+      type: 'Iso8601'
+    },     
   ]
 }
 

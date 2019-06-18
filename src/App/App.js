@@ -7,7 +7,7 @@ import Results from '../Results'
 
 export default function App() {
   const callZomeRef = useHolochainConnection(process.env.REACT_APP_ZOME_WEBSOCKET_URL)
-  const [instanceId, setInstanceId] = useState(sessionStorage.getItem('instanceId'))
+  const [instanceId, setInstanceId] = useState(sessionStorage.getItem('instanceId') || "")
   const storedHistory = sessionStorage.getItem('history')    
   const [history, setHistory] = useState((storedHistory && JSON.parse(storedHistory)) || [])  
 
