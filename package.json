@@ -1,6 +1,6 @@
 {
   "name": "zome-explorer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@holochain/hc-web-client": "^0.5",
