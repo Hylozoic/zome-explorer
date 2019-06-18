@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@holochain/hc-web-client": "^0.5",
+    "@hylozoic/react-holochain-hooks": "^0.4.0",
     "bootstrap": "^4.3.1",
     "dotenv": "^8.0.0",
     "enzyme": "^3.9.0",

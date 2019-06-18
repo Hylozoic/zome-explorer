@@ -48,9 +48,25 @@
   margin-bottom: 15px;
 }
 
+.instance-input {
+  margin-bottom: 10px;
+}
+
 .input-label {
   font-size: 12px;
   margin-right: 5px;
+}
+
+.status {
+  font-size: 12px;
+}
+
+.connected {
+  color: green;
+}
+
+.disconnected {
+  color: red;
 }
 
 .zome-list {
